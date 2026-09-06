@@ -106,16 +106,16 @@ Each section builds on the last Gaussian pyramid, then Laplacian pyramid, then m
 
 ## 🤝 Contributing
 
-Spotted a bug or have an idea for another example? Fork the repo, make your changes, and open a pull request.
+If you have any suggestions or want to improve the project, feel free to fork it, make your changes and submit a pull request.
 
 ---
 
-## 📜 License
+## 🔒 License
 
-Released under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
-## ✉️ Contact
+## 📧 Contact
 
-Questions or feedback are welcome — feel free to reach out.
+If you have any questions or concerns, please don't hesitate to contact me via email at imam220826@gmail.com
