@@ -35,7 +35,7 @@ Turns two ordinary photos into one seamless composite by decomposing them into G
 ## 🔬 Algorithm Overview
 
 1. **Downsample** each source image into a Gaussian pyramid (blur, then halve the resolution, repeat).
-2. **Extract detail** at each level to build a Laplacian pyramid — the difference between a Gaussian level and the next level expanded back up.
+2. **Extract detail** at each level to build a Laplacian pyramid the difference between a Gaussian level and the next level expanded back up.
 3. **Build a mask pyramid** the same way, from the composite mask.
 4. **Blend** the two Laplacian pyramids level-by-level, weighted by the mask pyramid at that resolution.
 5. **Collapse** the blended pyramid back into a full-resolution image by repeatedly upsampling and adding detail back in.
@@ -68,7 +68,7 @@ jupyter notebook Laplacian_and_Gaussian_Pyramid.ipynb
 (JupyterLab, VS Code, and Google Colab work too.)
 
 **3. Run it top to bottom**
-Each section builds on the last — Gaussian pyramid, then Laplacian pyramid, then mask, then blend, then reconstruction check — across all five examples.
+Each section builds on the last Gaussian pyramid, then Laplacian pyramid, then mask, then blend, then reconstruction check across all five examples.
 
 ---
 
@@ -97,10 +97,10 @@ Each section builds on the last — Gaussian pyramid, then Laplacian pyramid, th
 
 ## 🎓 Takeaways
 
-- **The upsampling math has to compensate for zero-interleaving** — multiplying the blur kernel by 4 total energy is what keeps reconstruction lossless; skipping this scaling silently corrupts every level above the base.
-- **A single hard blend always shows its seam; a pyramid blend doesn't** — because low frequencies (color, lighting) get blended broadly while high frequencies (edges, texture) stay local to the mask boundary.
-- **Masks don't have to be binary** — the airplane composite uses a continuous alpha mask, and the exact same blending pipeline handles it without modification.
-- **Non-power-of-two images aren't a special case** — as long as exact shapes are tracked at every pyramid level, the math holds regardless of image dimensions.
+- **The upsampling math has to compensate for zero-interleaving** : multiplying the blur kernel by 4 total energy is what keeps reconstruction lossless; skipping this scaling silently corrupts every level above the base.
+- **A single hard blend always shows its seam; a pyramid blend doesn't** : because low frequencies (color, lighting) get blended broadly while high frequencies (edges, texture) stay local to the mask boundary.
+- **Masks don't have to be binary** : the airplane composite uses a continuous alpha mask, and the exact same blending pipeline handles it without modification.
+- **Non-power-of-two images aren't a special case** : as long as exact shapes are tracked at every pyramid level, the math holds regardless of image dimensions.
 
 ---
 
